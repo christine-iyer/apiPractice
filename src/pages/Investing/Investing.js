@@ -1,8 +1,10 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
 
 
 export default function Investing(){
     const [prices, setPrices] = useState([])
+    const [errorMessage, setErrorMessage] = useState("");
 
         const getPrices = async (searchTerm) => {
             try {
@@ -14,7 +16,7 @@ export default function Investing(){
                 }
               })
               const data = await response.json()
-              setScore(data)
+              setPrices(data)
               return data
             } catch (e) {
               console.error(e);
@@ -28,8 +30,10 @@ export default function Investing(){
 
 
 
-}
+
 return (
+  <h1>hi</h1>
+
     )
 
 }

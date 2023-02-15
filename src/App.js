@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
       
      <Investing />
-     <News />
+ 
       </header>
     </div>
   );
