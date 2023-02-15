@@ -1,24 +1,22 @@
 import React from "react";
-import Card from 'react-bootstrap/Card'
-
-
-
+import DisplayTicker from "./DisplayTicker";
 
 const DisplayItem = ({ result}) => {
      return (
           <div className="card">
-               <Card style={{ width: '18rem' }}>
-  
-  <Card.Body>
-    <Card.Title>{result.longName}</Card.Title>
-    <Card.Text>
-    <h1>{result.symbol}</h1>
-     <h1>{result.regularMarketDayHigh}</h1>
-    </Card.Text>
-    
-  </Card.Body>
-  </Card>
-               
+               <div className="card-inner">
+                    <div className="card-front">
+                    <h3 className="sym-card">{result.fullExchangeName}</h3>
+                         <p className="sym-card">{result.longName}</p>
+                    </div>
+                    <div className="card-back">
+                         <h3>{result.symbol}</h3>
+                         <p>{result.regularMarketDayHigh}</p>
+                    </div>
+
+
+               </div>
+
 
           </div>     
      )
