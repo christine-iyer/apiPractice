@@ -1,6 +1,7 @@
 import React from 'react'
 import DisplayItem from './DisplayItem'
 
+
 const Display = ({ results, errorMessage }) => {
   return (
      !results ? errorMessage : 

@@ -6,7 +6,54 @@ This project was bootstrapped with [Video](https://www.youtube.com/watch?v=YaioU
 
 In the project directory, you can run:
 
-### `npm start`
+### ```               
+      <Card >
+      <Card.Body>
+          <Card.Title className="sym-card">{result.fullExchangeName}</Card.Title>
+          <Card.Subtitle className="sym-card">{result.symbol}</Card.Subtitle>
+          <Card.Text>{result.regularMarketDayHigh}</Card.Text>
+          </Card.Body>
+    </Card>
+    ```
+
+    ```
+    import React from "react";
+import DisplayTicker from "./DisplayTicker";
+
+
+const DisplayItem = ({ result}) => {
+     return (
+          <div className="card">
+               <div className="card-inner">
+                    <div className="card-front">
+                    <h3 className="sym-card">{result.fullExchangeName}</h3>
+                         <p className="sym-card">{result.longName}</p>
+                    </div>
+                    <div className="card-back">
+                         <h3>{result.symbol}</h3>
+                         <p>{result.regularMarketDayHigh}</p>
+                    </div>
+
+
+               </div>
+
+
+          </div>     
+     )
+}
+export default DisplayItem;
+```
+
+```
+https://yh-finance.p.rapidapi.com/market/v2/get-quotes?region=US&symbols=GOOGL%2CAMZN%2CAAPL%2CBA%2CCOIN%2CCVS%2CGS%2CMS%2CNVDA%2CPYPL%2CPFE%2CCRM%2CSBUX%2CTSLA%2CDIS%2CVTI%2CLI```
+
+
+
+
+
+
+
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

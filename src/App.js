@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
@@ -8,6 +9,7 @@ import Display from './components/display/Display';
 function App() {
   const [results, setResults] = useState([])
   const [errorMessage, setErrorMessage] = useState("");
+
 
       const getResults = async () => {
           try {
@@ -34,7 +36,8 @@ function App() {
     <div className="App">
       <header className="App-header">
 
-     <Display results={results}/>
+     <Display className='body' 
+     results={results}/>
    
 
  
