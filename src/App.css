@@ -23,13 +23,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.cards {
+.section {
   width: 15rem;
-  display: flex;
-        flex-wrap: wrap;
+  display: grid;
   gap: 1rem;
-  background-color: blueviolet;
-  
+  grid-template-columns: repeat(4,1fr);
+}
+.card{
+  margin: 1fr;
 }
 
 .App-link {
