@@ -1,29 +1,16 @@
 import { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Display from './components/display/Display';
 import Container from 'react-bootstrap/Container';
-import {
-  DndContext,
-  closestCenter
-} from "@dnd-kit/core";
-import {
-  arrayMove,
-  SortableContext,
-  verticalListSortingStrategy
-} from "@dnd-kit/sortable";
+import { DndContext, closestCenter } from "@dnd-kit/core";
+import { arrayMove, SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { SortableItem } from './components/display/SortableItem';
-
 
 function App() {
   
   const [results, setResults] = useState([])
   const [errorMessage, setErrorMessage] = useState("");
-  const [languages, setLanguages ] = useState(["JavaScript", "Python", "TypeScript"]);
-
-
-
-      const getResults = async () => {
+   const getResults = async () => {
           try {
             const response = await fetch('https://yh-finance.p.rapidapi.com/market/v2/get-quotes?region=US&symbols=GOOGL%2CAMZN%2CAAPL%2CBA%2CCOIN%2CCVS%2CGS%2CMS%2CNVDA%2CPYPL%2CPFE%2CCRM%2CSBUX%2CTSLA%2CDIS%2CVTI%2CLI', {
               method: "GET",
@@ -50,7 +37,7 @@ function App() {
           onDragEnd={handleDragEnd}
         >
           <Container className="p-3" style={{"width": "50%"}} align="center">
-            <h3>The best programming languages!</h3>
+            <h3>The best portfolio!</h3>
             <SortableContext
               items={results}
               strategy={verticalListSortingStrategy}
