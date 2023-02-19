@@ -9,7 +9,7 @@ import { SortableItem } from './components/display/SortableItem';
 function App() {
   
   const [results, setResults] = useState([])
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
    const getResults = async () => {
           try {
             const response = await fetch('https://yh-finance.p.rapidapi.com/market/v2/get-quotes?region=US&symbols=GOOGL%2CAMZN%2CAAPL%2CBA%2CCOIN%2CCVS%2CGS%2CMS%2CNVDA%2CPYPL%2CPFE%2CCRM%2CSBUX%2CTSLA%2CDIS%2CVTI%2CLI', {
@@ -37,7 +37,7 @@ function App() {
           onDragEnd={handleDragEnd}
         >
           <Container className="p-3" style={{"width": "50%"}} align="center">
-            <h3>The best portfolio!</h3>
+            <h3>The best pportfolio!</h3>
             <SortableContext
               items={results}
               strategy={verticalListSortingStrategy}
@@ -59,7 +59,7 @@ function App() {
           setResults((items) => {
             const activeIndex = items.indexOf(active.id);
             const overIndex = items.indexOf(over.id);
-            console.log(arrayMove(items, activeIndex, overIndex));
+            arrayMove(items, activeIndex, overIndex);
             return arrayMove(items, activeIndex, overIndex);
             // items: [2, 3, 1]   0  -> 2
             // [1, 2, 3] oldIndex: 0 newIndex: 2  -> [2, 3, 1] 
