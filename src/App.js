@@ -56,7 +56,7 @@ function App() {
               strategy={verticalListSortingStrategy}
             >
               {/* We need components that use the useSortable hook */}
-              {results.map(result => <SortableItem key={result.symbol} id={result.id}/>)}
+              {results.map(result => <SortableItem key={result.symbol} result={result}/>)}
             </SortableContext>
           </Container>
         </DndContext>
