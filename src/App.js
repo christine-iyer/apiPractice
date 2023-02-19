@@ -79,3 +79,16 @@ export default App;
   //  </header>
   //   </div>
   // );
+
+  //syntax for objects 
+//   function handleDragEnd(event) {
+//     const { active, over } = event;
+
+//     if (active.id !== over.id) {
+//         setItems((items) => {
+//             const oldIndex = items.findIndex(f => f.id === active.id);
+//             const newIndex = items.findIndex(f => f.id === over.id);
+//             return arrayMove(items, oldIndex, newIndex);
+//         });
+//     }
+// }
