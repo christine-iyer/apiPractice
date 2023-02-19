@@ -36,7 +36,7 @@ function App() {
           collisionDetection={closestCenter}
           onDragEnd={handleDragEnd}
         >
-          <Container className="p-3" style={{"width": "50%"}} align="center">
+          <Container className="p-3" style={{"width": "30%"}} align="center">
             <h3>The best pportfolio!</h3>
             <SortableContext
               items={results}
@@ -57,8 +57,8 @@ function App() {
     
         if(active.id !== over.id) {
           setResults((items) => {
-            const activeIndex = items.indexOf(active.id);
-            const overIndex = items.indexOf(over.id);
+            const activeIndex = items.findIndex((item)=> item.symbol===active.id);
+            const overIndex = items.findIndex((item) => item.symbol === over.id);
             arrayMove(items, activeIndex, overIndex);
             return arrayMove(items, activeIndex, overIndex);
             // items: [2, 3, 1]   0  -> 2
