@@ -1,8 +1,11 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import {assets} from './Assets'
 import Card from 'react-bootstrap/Card';
 
 export function SortableItem({ result }) {
+    
+
     // result.id
     // JavaScript
 
@@ -18,22 +21,17 @@ export function SortableItem({ result }) {
         transform: CSS.Transform.toString(transform),
         transition
     }
-
+console.log(assets)
     return (
         <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-            <Card 
-            // body className="m-3"
-                // style={{
-                //     width: '15rem',
-                //     display: "grid",
-                //     alignText: "left",
-                //     gap: "1rem"
-                // }}
-                >
+            <Card >
                 <Card.Body>
-                    <Card.Title>{result.symbol}</Card.Title>
+                    {assets.symbol === result.symbol ? 
+                <h1 >test: {assets.symbol}</h1>  : ""  
+                }
+                    <Card.Title>{result.symbol} </Card.Title>
                     <Card.Subtitle>{result.fullExchangeName}</Card.Subtitle>
-                    <Card.Text>{result.regularMarketDayHigh}</Card.Text>
+                    <Card.Text>{result.regularMarketDayHigh} you paid __________ </Card.Text>
                 </Card.Body>
             </Card>
         </div>

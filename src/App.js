@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import { arrayMove, SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { SortableItem } from './components/display/SortableItem';
+import List from './components/display/List';
 
 function App() {
   
@@ -21,6 +22,7 @@ function App() {
             })
             const data = await response.json()
             setResults(data.quoteResponse.result)
+
             return data
           } catch (e) {
             console.error(e);
@@ -31,7 +33,44 @@ function App() {
         useEffect(() => {
           getResults()
       }, [])
+      const assets = [
+        { symbol: "GOOGL", purchasePrice: 143.49,  shares: 100 },
+        { symbol: "TSLA", purchasePrice: 242.54, shares: 45 },
+        { symbol: "AMZN", purchasePrice: 160.00, shares: 80 },
+        { symbol: "BA", purchasePrice: 188.59, shares: 25},
+        { symbol: "COIN", purchasePrice: 257.31, shares:50 },
+        { symbol: "AAPL", purchasePrice: 114.56, shares:200},
+        { symbol: "CVS", purchasePrice: 89.83, shares: 25 },
+        { symbol: "GS", purchasePrice: 342.94, shares: 10 },
+        { symbol: "MS", purchasePrice: 98.39, shares: 25 },
+        { symbol: "NVDA", purchasePrice: 293.75, shares: 5 },
+        { symbol: "PYPL", purchasePrice: 191.57, shares: 10 },
+        { symbol: "PFE", purchasePrice: 47.45, shares: 100 },
+        { symbol: "CRM", purchasePrice: 160.38, shares: 20 },
+        { symbol: "SBUX", purchasePrice: 102.99, shares: 25 },
+        { symbol: "DIS", purchasePrice: 151.93, shares: 10 },
+        { symbol: "VTI", purchasePrice: 239.05, shares: 10 },
+        { symbol: "LI", purchasePrice: 32.53, shares: 225 }
+        
+      ];
+
+      let arr1 = [
+        ...results
+
+   ];
+   
+   let arr2 = [
+      ...assets
+   ];
+   
+   let resultAssets = arr1.map((item, i) => Object.assign({}, item, arr2[i]));
+
+
       return (
+        <div>
+          <List results = {results}/>
+      
+        
         <DndContext
           collisionDetection={closestCenter}
           onDragEnd={handleDragEnd}
@@ -47,6 +86,8 @@ function App() {
             </SortableContext>
           </Container>
         </DndContext>
+        </div>
+        
       );
     
       function handleDragEnd(event) {

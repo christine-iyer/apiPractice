@@ -1,7 +1,3 @@
-// Index Page
-// import { Link } from "react-router-dom";
-
-
 export const assets = [
   { symbol: "GOOGL", purchasePrice: 143.49,  shares: 100 },
   { symbol: "TSLA", purchasePrice: 242.54, shares: 45 },
