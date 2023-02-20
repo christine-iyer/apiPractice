@@ -12,25 +12,25 @@ function App() {
   const [results, setResults] = useState([])
   const [errorMessage, setErrorMessage] = useState(null);
   const assets = [
-    { symbol: "GOOGL", purchasePrice: 143.49,  shares: 100 },
-    { symbol: "TSLA", purchasePrice: 242.54, shares: 45 },
-    { symbol: "AMZN", purchasePrice: 160.00, shares: 80 },
-    { symbol: "BA", purchasePrice: 188.59, shares: 25},
-    { symbol: "COIN", purchasePrice: 257.31, shares:50 },
-    { symbol: "AAPL", purchasePrice: 114.56, shares:200},
-    { symbol: "CVS", purchasePrice: 89.83, shares: 25 },
-    { symbol: "GS", purchasePrice: 342.94, shares: 10 },
-    { symbol: "MS", purchasePrice: 98.39, shares: 25 },
-    { symbol: "NVDA", purchasePrice: 293.75, shares: 5 },
-    { symbol: "PYPL", purchasePrice: 191.57, shares: 10 },
-    { symbol: "PFE", purchasePrice: 47.45, shares: 100 },
-    { symbol: "CRM", purchasePrice: 160.38, shares: 20 },
-    { symbol: "SBUX", purchasePrice: 102.99, shares: 25 },
-    { symbol: "DIS", purchasePrice: 151.93, shares: 10 },
-    { symbol: "VTI", purchasePrice: 239.05, shares: 10 },
-    { symbol: "LI", purchasePrice: 32.53, shares: 225 }
-    
-  ]
+  { symbol: "GOOGL", purchasePrice: 143.49,  shares: 100 },
+  { symbol: "TSLA", purchasePrice: 242.54, shares: 45 },
+  { symbol: "AMZN", purchasePrice: 160.00, shares: 80 },
+  { symbol: "BA", purchasePrice: 188.59, shares: 25},
+  { symbol: "COIN", purchasePrice: 257.31, shares:50 },
+  { symbol: "AAPL", purchasePrice: 114.56, shares:200},
+  { symbol: "CVS", purchasePrice: 89.83, shares: 25 },
+  { symbol: "GS", purchasePrice: 342.94, shares: 10 },
+  { symbol: "MS", purchasePrice: 98.39, shares: 25 },
+  { symbol: "NVDA", purchasePrice: 293.75, shares: 5 },
+  { symbol: "PYPL", purchasePrice: 191.57, shares: 10 },
+  { symbol: "PFE", purchasePrice: 47.45, shares: 100 },
+  { symbol: "CRM", purchasePrice: 160.38, shares: 20 },
+  { symbol: "SBUX", purchasePrice: 102.99, shares: 25 },
+  { symbol: "DIS", purchasePrice: 151.93, shares: 10 },
+  { symbol: "VTI", purchasePrice: 239.05, shares: 10 },
+  { symbol: "LI", purchasePrice: 32.53, shares: 225 }
+  
+]
    const getResults = async () => {
           try {
             const response = await fetch('https://yh-finance.p.rapidapi.com/market/v2/get-quotes?region=US&symbols=GOOGL%2CAMZN%2CAAPL%2CBA%2CCOIN%2CCVS%2CGS%2CMS%2CNVDA%2CPYPL%2CPFE%2CCRM%2CSBUX%2CTSLA%2CDIS%2CVTI%2CLI', {
@@ -41,11 +41,7 @@ function App() {
               }
             })
             const data = await response.json()
-            data = setResults(data.quoteResponse.result)
-            let arr1 = [...data]
-            let arr2 = [...assets]
-            results = arr1.map((item, i) => Object.assign({}, item, arr2[i]))
-
+            setResults(data.quoteResponse.result).map()
 
             return data
           } catch (e) {
