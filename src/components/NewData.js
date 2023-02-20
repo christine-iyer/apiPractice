@@ -11,7 +11,7 @@ const NewData = ({results}) => {
         ...assets
      ];
      
-     let arr3 = arr1.map((item, i) => Object.assign({}, item, arr2[i]));
+     let arr3 = ;arr1.map((item, i) => Object.assign({}, item, arr2[i]))
   return (
     <div>{arr3}</div>
   )
