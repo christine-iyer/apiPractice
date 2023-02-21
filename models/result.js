@@ -1,7 +1,7 @@
 const resultSchema = new Schema({
     symbol: { type: String, required: true },
-    regularMarketDayHigh: { type: Number },
-    fullExchangeName: { type: String, default: 0 }
+    regularMarketDayHigh: { type: Number, default: 0 },
+    fullExchangeName: { type: String }
 })
 
 
