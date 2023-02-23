@@ -1,4 +1,4 @@
-export const assets = [
+export const portfolio = [
      { symbol: "GOOGL", purchasePrice: 143.49,  shares: 100 },
      { symbol: "TSLA", purchasePrice: 242.54, shares: 45 },
      { symbol: "AMZN", purchasePrice: 160.00, shares: 80 },

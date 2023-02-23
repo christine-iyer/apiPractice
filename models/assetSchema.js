@@ -1,4 +1,4 @@
-//const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
 const assetSchema = new Schema({
    symbol: { type: String, required: true },
@@ -7,4 +7,5 @@ const assetSchema = new Schema({
    regularMarketDayHigh: { type: Number, default: 0 },
    fullExchangeName: { type: String }
 })
-module.exports = assetSchema
+const Asset = model('Asset', assetSchema)
+module.exports = Asset
