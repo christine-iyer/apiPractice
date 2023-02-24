@@ -1,15 +1,12 @@
 import { assets } from './Assets';
 import Card from 'react-bootstrap/Card';
 
-export default function List({ results }) {
-	let newAssets = []
-	newAssets = [{ ...results, ...assets }]
+export default function List() {
+
 	const listItems = assets.map((asset) => (
 
 		<li key={asset.symbol}>
 			<Card body className="p-3" style={{ "width": "20%" }} align="center">
-				{console.log(newAssets)}
-
 				<b>{asset.symbol}:</b>
 				{' ' +
 					asset.shares +

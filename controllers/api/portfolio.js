@@ -1,13 +1,5 @@
 const Asset = require('../../models/assetSchema')
-
 require('dotenv').config()
-
-
-
-module.exports = {
-  getResults, 
-  index
-};
 
 const getResults = async () => {
     try {
@@ -20,7 +12,7 @@ const getResults = async () => {
       })
       const data = await response.json()
       res.locals.data.quoteResponse.results = data.quoteResponse.results
-      
+      console.log(data)
         next()
 
     } catch (e) {
@@ -46,4 +38,8 @@ async function index(req, res) {
     res.status(400).json({ msg: e.message });
   }  }
 
-
+  module.exports = {
+    getResults, 
+    index
+  };
+  

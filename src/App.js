@@ -9,21 +9,21 @@ import List from './components/display/List';
 
 function App() {
 
-  const listAssets = async () => {
-    try {
-      const response = await fetch('http:localhost:3000', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
-        }
-      })
-      const data = await response.json()
-      return data
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  // const listAssets = async () => {
+  //   try {
+  //     const response = await fetch('http:localhost:3000', {
+  //       method: 'GET',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         Authorization: `Bearer ${JSON.parse(localStorage.getItem('token'))}`
+  //       }
+  //     })
+  //     const data = await response.json()
+  //     return data
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
 
   // const [results, setResults] = useState([])
   // const [errorMessage, setErrorMessage] = useState(null);
@@ -52,7 +52,10 @@ function App() {
 
 
   return (
-"Hi"
+    <div>
+<List />
+    </div>
+
 
   );
 
