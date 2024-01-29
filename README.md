@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+lets get it started.# Getting Started with Create React App
 
 This project was bootstrapped with [Video](https://www.youtube.com/watch?v=YaioUnMw0mo).
 
